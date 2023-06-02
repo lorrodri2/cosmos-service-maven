@@ -14,7 +14,7 @@ RUN mvn clean package
 # Package stage
 #
 
-FROM openjdk:17-jre-slim
+FROM openjdk:11-jre-slim
 
 ARG JAR_NAME="cosmos-service-maven-0.0.1-SNAPSHOT"
 
