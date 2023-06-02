@@ -2,7 +2,7 @@
 # Build stage
 #
 
-FROM maven:3.6.3-jdk-11-slim AS build
+FROM maven:3.6.3-jdk-17-slim AS build
 
 WORKDIR usr/src/app
 
