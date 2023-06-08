@@ -22,7 +22,7 @@ jobs:
            username: ${{ secrets.ACR_USERNAME }}
            password: ${{ secrets.ACR_PASSWORD }}
       - run: |
-          docker build . -t ${{ secrets.ACR_ENDPOINT }}/lorenzo1906acr:${{ github.sha }}
-          docker push ${{ secrets.ACR_ENDPOINT }}/lorenzo1906acr:${{ github.sha }}
+          docker build . -t ${{ secrets.ACR_ENDPOINT }}/${{ secrets.ACR_NAME }}:${{ github.sha }}
+          docker push ${{ secrets.ACR_ENDPOINT }}/${{ secrets.ACR_NAME }}:${{ github.sha }}
 
 
