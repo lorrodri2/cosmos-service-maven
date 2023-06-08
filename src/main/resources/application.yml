@@ -2,9 +2,9 @@ spring:
   cloud:
     azure:
       cosmos:
-        endpoint: ${{ secrets.COSMOS_ENDPOINT }}
-        key: ${{ secrets.COSMOS_KEY }}
-        secondaryKey: ${{ secrets.COSMOS_KEY2 }}
-        database: ${{ secrets.COSMOS_DATABASE }}
-        region: ${{ secrets.COSMOS_REGION }}
+        endpoint: ${COSMOS_ENDPOINT}
+        key: ${COSMOS_KEY}
+        secondaryKey: ${COSMOS_KEY2}
+        database: ${COSMOS_DATABASE}
+        region: ${COSMOS_REGION}
 
