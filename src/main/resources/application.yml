@@ -7,4 +7,23 @@ spring:
         secondaryKey: ${COSMOS_KEY2}
         database: ${COSMOS_DATABASE}
         region: ${COSMOS_REGION}
-
+  kafka:
+    bootstrap-servers: ${KAFKA_URL}:9093
+    properties:
+      security:
+        protocol: SASL_SSL
+      sasl:
+        mechanism: PLAIN
+        jaas:
+          config: org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="${KAFKA_CONNECTION_STRING}";
+    consumer:
+      client-id: ${KAFKA_CONSUMER_ID}
+      group-id: ${KAFKA_CONSUMER_GROUP_ID}
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: com.example.cosmosservicemaven.serializer.MessageDeSerializer
+    producer:
+      client-id: ${KAFKA_PRODUCER_ID}
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: com.example.cosmosservicemaven.serializer.MessageSerializer
+topic:
+  name: ${KAFKA_TOPIC}
